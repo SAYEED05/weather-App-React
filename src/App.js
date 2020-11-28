@@ -36,7 +36,7 @@ function App() {
     return `${day}, ${date} ${month} ${year}`;
   };
   const api = {
-    base: "http://api.openweathermap.org/data/2.5/",
+    base: "https://api.openweathermap.org/data/2.5/",
     key: process.env.REACT_APP_WEATHER_API_KEY,
   };
 
@@ -50,7 +50,7 @@ function App() {
           var weatherDesc = data.weather[0].main;
           var iconCode = data.weather[0].icon;
           var iconUrl =
-            "http://openweathermap.org/img/wn/" + iconCode + "@4x.png";
+            "https://openweathermap.org/img/wn/" + iconCode + "@4x.png";
           const ico = document.getElementById("icon");
           ico.innerHTML = `<img src="${iconUrl}" alt="" srcset=""> <h3>${weatherDesc}`;
         })
