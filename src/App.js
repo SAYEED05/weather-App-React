@@ -1,9 +1,17 @@
 import React, { useState } from "react";
 
+
+/* function importAll(r) {
+  return r.keys().map(r);
+}
+const images = importAll(require.context('./assets/icons/', false, /\.(png|jpe?g|svg)$/));
+console.log(images) */
+
+
 function App() {
+
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
-
   const wholedate = (d) => {
     var months = [
       "January",
@@ -49,10 +57,20 @@ function App() {
           setQuery("");
           var weatherDesc = data.weather[0].main;
           var iconCode = data.weather[0].icon;
-          var iconUrl =
+          const ico = document.getElementById("icon"); 
+          //url for image fetch from online
+          /* var iconUrl =
             "https://openweathermap.org/img/wn/" + iconCode + "@4x.png";
-          const ico = document.getElementById("icon");
-          ico.innerHTML = `<img src="${iconUrl}" alt="" srcset=""> <h3>${weatherDesc}`;
+             ico.innerHTML = `<img src="${iconUrl}" alt="${weatherDesc}" srcset=""> <h3>${weatherDesc}`; */
+
+          //Local images
+          const locImg=process.env.PUBLIC_URL+'/assets/icons/'+iconCode+'.png';
+
+          ico.innerHTML = `<img id='weatherImg' src=${locImg} alt="${weatherDesc}" srcset=""> <h3>${weatherDesc}`;
+
+         
+      
+
         })
         .catch((err) => console.error(err));
     }

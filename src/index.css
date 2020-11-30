@@ -97,6 +97,21 @@ body {
   border: 10px solid white;
 }
 
+#weatherImg{
+  position: relative;
+ top: 40%;
+ height: 50%;
+ width: 50%;
+}
+
+h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
 @media (max-width: 600px) {
   .search input {
     width: 80vw;
@@ -112,5 +127,8 @@ body {
     top: 65%;
     left: 5%;
     padding-bottom: 10px;
+  }
+  h3 {
+    margin-top: 30px;
   }
 }
