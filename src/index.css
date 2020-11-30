@@ -74,9 +74,9 @@ body {
 }
 
 .misc {
-  position: relative;
-  top: 60px;
-  right: 130px;
+  position: absolute;
+  top: 70%;
+  left: -30%;
 }
 
 .misc ul {
@@ -95,4 +95,22 @@ body {
 
 .desc {
   border: 10px solid white;
+}
+
+@media (max-width: 600px) {
+  .search input {
+    width: 80vw;
+  }
+
+  .weather-box {
+    width: 80vw;
+    height: 50vh;
+  }
+  .misc,
+  .misc ul {
+    position: fixed;
+    top: 65%;
+    left: 5%;
+    padding-bottom: 10px;
+  }
 }
